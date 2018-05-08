@@ -1,0 +1,36 @@
+
+
+body {
+	background-image: url(http://www.comicbookherald.com/wp-content/uploads/2016/10/dc-comics-universe-rebirth.jpg);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.jumbotron {
+	color: rgba(247, 4, 4, 0.995);
+	margin-bottom: auto;
+	padding-bottom: 20px;
+	padding-top: 25px;
+	margin-right: 10%;
+	margin-left: 10%;
+	text-align: center;
+	background-color:transparent !important;
+	margin: 0 auto;
+}
+
+
+label {
+	color: red;
+	font-size: 25px;
+	margin-right: 10px;
+}
+
+p {
+	color: red;
+	font-size: 16px;
+}
+
+
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>"DC Universe"</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+</head>
+<body>
+	
+	<div class="jumbotron">
+		<div class="container">
+			<h1>DC Universe</h1>
+        </div>
+    
+        <div class = "button">
+        <button data-person="Batman"> Batman</button>
+        <button data-person="Superman">Superman</button>
+        <button data-person="Wonder Woman">Wonder Woman</button>
+        <button data-person="The Joker"> The Joker</button>
+        <button data-person="Cat Woman">Catwoman</button>
+        <div id="gifs-appear-here">
+            </div>
+	    </div>		
+
+        <div id="gifButtonsView" class="container">
+        </div>
+
+
+        <div class="container">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+            <div id="#gifsView">
+            </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <form id="gifForm" role="form">
+                </form> 
+            </div>
+        </div>           
+        <div class="form-group" role="form">
+            <label for="topicInput">
+                <h3>DC Character</h3> 
+            </label>
+        </div> 
+
+        <input type ="text" id="topicInput">
+            <div>
+                <br>
+            <input id="addGif" type="submit" value = "Add New Character" class= "btn btn-primary">    
+           </div>
+            </div>        
+        </div>
+    </div>
+ </div>
+		
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script type="text/javascript">
+    
+
+// // Event listener for all button elements
+//         $("button").on("click", function() {
+//       // In this case, the "this" keyword refers to the button that was clicked
+//       var person = $(this).attr("data-person");
+
+//       // Constructing a URL to search Giphy for the name of the person who said the quote
+//       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+//         person + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+//       // Performing our AJAX GET request
+//       $.ajax({
+//         url: queryURL,
+//         method: "GET"
+//       })
+//         // After the data comes back from the API
+//         .then(function(response) {
+//           // Storing an array of results in the results variable
+//           var results = response.data;
+//           console.log(results)
+//           // Looping over every result item
+//           for (var i = 0; i < results.length; i++) {
+            
+//             var movingLink = results[i].images.fixed_height.url
+//             var stillLink = results[i].images.fixed_height_still.url
+//             console.log(movingLink)
+//             console.log(stillLink)
+
+
+//             // Only taking action if the photo has an appropriate rating
+//             // if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+//               // Creating a div with the class "item"
+//               var gifDiv = $("<div class='item'>");
+              
+//               // Storing the result item's rating
+//               var rating = results[i].rating;
+
+//               // Creating a paragraph tag with the result item's rating
+//               var p = $("<p>").text("Rating: " + rating);
+
+//               // Creating an image tag
+//               var personImage = $("<img>");
+//               personImage.addClass("clickMe");
+
+
+//               // Giving the image tag an src attribute of a proprty pulled off the
+//               // result item
+//               personImage.attr("src", stillLink);
+//               personImage.attr('data-state', 'still');
+//               personImage.attr('data-animated', movingLink);
+//               personImage.attr('data-still', stillLink);
+
+//               // Appending the paragraph and personImage we created to the "gifDiv" div we created
+//               gifDiv.append(p);
+//               gifDiv.append(personImage);
+
+//               // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+//               $("#gifs-appear-here").prepend(gifDiv);
+//             // }  
+//           }
+//         });
+//     });
+
+//     $(document).on('click', '.clickMe', function(){
+//       var state = $(this).attr('data-state');
+
+//       if(state === 'still'){
+//         $(this).attr('data-state', 'animated');
+//         $(this).attr('src', $(this).attr('data-animated'));
+//       }else{
+//         $(this).attr('data-state', 'still');
+//         $(this).attr('src', $(this).attr('data-still'));
+//       }
+//     })
+
+//   var dcUniverse =["Batman","Superman","Wonder Woman","The Joker","Catwoman"];
+
+// // for ( var i= 0; i < dcUniverse.length; i++){
+// // var button = $(“<button>“);
+// // button.text(dcUniverse[i]);
+// // button.attr(“data-person”,dcUniverse[i]);
+// // $(“.col-md”).append(button);
+
+// // var inputCharacter = $(“#addCharacter”).val().trim();
+
+// //   var newButton = $(“<button>“);
+// //   newButton.text(inputCharacter);
+// //   newButton.attr(“data-person”, inputCharacter);
+// //   $(“.col-md”).append(newButton);
+// // }
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>	
+
+
+
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
+</body>
+</html>
