@@ -2,8 +2,10 @@
 var dcUniverse =["Batman","Superman","Wonder Woman","The Joker","Catwoman"];
 
 $("button").on("click", function() {
-    
-    var person = $(this).attr("data-person");
+    //each click clears previous click results
+    // select the gif element
+    $("#gifs-appear-here").empty();
+    var person = $(this).attr("data-person");""
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
       person + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -17,14 +19,14 @@ $("button").on("click", function() {
       .then(function(response) {
 
         var results = response.data;
-        console.log(results)
+        // console.log(results)
        
         for (var i = 0; i < results.length; i++) {
           
           var movingLink = results[i].images.fixed_height.url
           var stillLink = results[i].images.fixed_height_still.url
-          console.log(movingLink)
-          console.log(stillLink)
+          // console.log(movingLink)
+          // console.log(stillLink)
 
             var gifDiv = $("<div class='item'>");
             var rating = results[i].rating;
