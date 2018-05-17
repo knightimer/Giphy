@@ -63,17 +63,18 @@ $("button").on("click", function() {
 
 
 //NEW BUTTON//
-// for ( var i= 0; i < dcUniverse.length; i++){
-// var button = $(“<button>“);
-// button.text(dcUniverse[i]);
-// button.attr(“data-person”,dcUniverse[i]);
-// $(“.col-md”).append(button);
+//grab the value of the form input
+//using jquery select that form
 
-// var inputCharacter = $(“#addCharacter”).val().trim();
+$("#addGif").on("click", function(event) {
+  event.preventDefault();
+  var formValue = $("#topicInput").val()
+  console.log(formValue);
+  });
+ 
+ // Create a new element <button>
 
-//   var newButton = $(“<button>“);
-//   newButton.text(inputCharacter);
-//   newButton.attr(“data-person”, inputCharacter);
-//   $(“.col-md”).append(newButton);
-// }
+ //take the variable(formvalue) and change the text of the button
 
+ //render the button on the page//
+ 
