@@ -28,7 +28,7 @@ $("button").on("click", function() {
           // console.log(movingLink)
           // console.log(stillLink)
 
-            var gifDiv = $("<div class='item'>");
+            var gifDiv = $("<div class='item col-md-3'>");
             var rating = results[i].rating;
 
             var p = $("<p>").text("Rating: " + rating);
